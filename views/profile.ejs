@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <title>Movie Collection - Profile Settings</title>
+    <link rel="stylesheet" href="stylesheet/stylee.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-12 main-nav">
+            <div class="col-md-9"><h3><span class="fa fa-film"></span>&nbsp;Movie Collection - Profile Settings</h3></div>
+            <div class="col-md-offset-9 login-tab">
+                <a href="/collection" class="btn btn-success btn-sm">My Collection</a>
+                <a href="/logout" class="btn btn-info btn-sm">Logout</a>
+            </div>
+        </div>
+        <div class="col-md-12 profile-container">
+            <div class="well">
+                <h3><span class="fa fa-user"> Local</span></h3>
+                <% if(user.local.email) {%>
+                <p>
+                    <b>E-mail</b>: <%= user.local.email %> <br/>
+                    <b>Name</b>: <%= user.local.name %>
+                </p>
+                <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+            </div>
+            <div class="well">
+                <h3>Google+</h3>
+                <% if(user.google.token){ %>
+                <p>
+                    <b>E-mail</b>: <%= user.google.email%>
+                    <b>Name</b>: <%= user.google.name%>
+                </p>
+                <a href="/unlink/google" class="btn btn-danger">Unlink</a>
+                <%} else {%>
+                <a href="/connect/google" class="btn btn-danger">Connect Google</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+    <title>Movie Collection - My Collection</title>
+    <link rel="stylesheet" href="stylesheet/stylee.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container-fluid col-md-12 main-nav">
+       <div class="col-md-3"><h3><span class="fa fa-film"></span>&nbsp;Movie Collection</h3></div>
+       <div class="col-md-offset-9 login-tab">
+           <a href="/profile" class="btn btn-success btn-sm">Profile Settings</a>
+           <a href="/logout" class="btn btn-info btn-sm">Logout</a>
+       </div>
+</div>
+<div class="container-fluid col-md-12 profile-container">
+    <div class="col-md-8 movie-col">
+        <h4><span class="fa fa-check-square-o"></span> Watched movies</h4>
+        <hr>
+        <div class="movie">
+            <h3>Some long movie title goes here</h3>
+            <p>Director: asldasdasd</p>
+            <p>Duration: 200</p>
+            <p>Year: 1992</p>
+            <p>Genre: action</p>
+            <p>Storyline: no story</p>
+            <hr>
+        </div>
+        <div class="movie">
+            <h3>Title</h3>
+            <p>Director:</p>
+            <p>Duration:</p>
+            <p>Year:</p>
+            <p>Genre:</p>
+            <p>Storyline:</p>
+            <hr>
+        </div>
+        <div class="movie">
+            <h3>Title</h3>
+            <p>Director:</p>
+            <p>Duration:</p>
+            <p>Year:</p>
+            <p>Genre:</p>
+            <p>Storyline:</p>
+            <hr>
+        </div>
+        <div class="movie">
+            <h3>Title</h3>
+            <p>Director:</p>
+            <p>Duration:</p>
+            <p>Year:</p>
+            <p>Genre:</p>
+            <p>Storyline:</p>
+            <hr>
+        </div>
+    </div>
+    <div class="col-md-offset-4">
+        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target=".bs-modal-lg"><span class="fa fa-plus"></span> Add movie</button>
+    </div>
+</div>
+
+<div class="modal fade bs-modal-lg" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content add-mv-modal">
+            <h4><span class="fa fa-plus"></span> Add existing movie</h4><hr>
+            <span class="fa fa-search-plus"></span> <input type="text">
+            <div class="empty"></div>
+            <h4><span class="fa fa-plus"></span> Add new movie</h4><hr>
+            <form>
+                <div class="form-group">
+                    <label>Movie title</label>
+                    <input type="text" class="form-control" placeholder="Title" name="mTitle">
+                </div>
+                <div class="form-group">
+                    <label>Director</label>
+                    <input type="text" class="form-control" placeholder="Director name" name="mDirector">
+                </div>
+                <div class="form-group">
+                    <label>Duration</label>
+                    <input type="number" class="form-control" placeholder="Duration" name="mDuration">
+                </div>
+                <div class="form-group">
+                    <label>Year</label>
+                    <input type="number" class="form-control" placeholder="Year" name="mYear">
+                </div>
+                <div class="form-group">
+                    <label>Genre</label>
+                    <input type="text" class="form-control" placeholder="Genre" name="mGenre">
+                </div>
+                <div class="form-group">
+                    <label>Storyline</label>
+                    <input type="text" class="form-control" placeholder="Storyline" name="mStory">
+                </div>
+                <button type="submit" class="btn btn-info"><span class="fa fa-floppy-o"></span> Save movie</button>
+            </form>
+            <div class="empty"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+</html>
