@@ -1,3 +1,6 @@
+var mongooes = require('mongoose');
+var Movie = mongooes.model('Movie');
+
 module.exports = function(app, passport){
 
     app.get('/', function(req,res){
@@ -7,7 +10,29 @@ module.exports = function(app, passport){
 
     app.route('/collection')
         .get(isLoggedIn, function(req, res){
-            res.render('collection.ejs');
+            var user = req.user;
+            res.render('collection.ejs', {user: user});
+        });
+
+    app.route('/addMovie')
+        .post(function(req, res){
+            var user = req.user;
+            new Movie({
+                title: req.body.mTitle,
+                director: req.body.mDirector,
+                duration: req.body.mDuration,
+                storyline: req.body.mStory,
+                year: req.body.mYear,
+                genre: req.body.mGenre
+            }).save(function(err, mov){
+                if(err) throw err;
+
+                user.movie.push(mov);
+                user.save(function(err){
+                    if(err) throw err;
+                    res.redirect('/collection');
+                });
+            });
         });
 
     app.route('/login')
@@ -74,6 +99,7 @@ module.exports = function(app, passport){
         user.local.email = undefined;
         user.local.password = undefined;
             user.save(function(err){
+                if(err) throw err;
             res.redirect('/profile');
         });
     });
@@ -82,6 +108,7 @@ module.exports = function(app, passport){
         var user = req.user;
         user.google.token = undefined;
         user.save(function(err){
+            if(err) throw err;
             res.redirect('/profile');
         });
     });
@@ -92,4 +119,4 @@ function isLoggedIn(req, res, next){
         return next();
 
     res.redirect('/');
-};
+}
