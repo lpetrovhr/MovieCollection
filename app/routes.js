@@ -1,11 +1,36 @@
 var mongooes = require('mongoose');
 var Movie = mongooes.model('Movie');
+var User = mongooes.model('User');
 
 module.exports = function(app, passport){
 
     app.get('/', function(req,res){
+        User.find({}, function(err, users){
+            var userMap = [];
 
-        res.render('index.ejs', {message: req.flash('loginMessage')});
+            users.forEach(function(user){
+                userMap.push(user);
+            });
+            res.render('index.ejs', {message: req.flash('loginMessage'), users: userMap});
+        });
+    });
+
+    app.get('/userData', function (req, res) {
+        console.log('req: ' + req.param('ajaxValue'));
+        var userID = req.param('ajaxValue');
+
+        User.findOne({'_id' : userID}, function(err, user){
+            var mapThisShit = [];
+            var movie = user.movie
+            movie.forEach(function(mov){
+                var uM = JSON.stringify(mov);
+                var uMP = JSON.parse(uM);
+                mapThisShit.push(uMP);
+            });
+            console.log('Parsed JSON data: '+ mapThisShit);
+            res.send({movies: mapThisShit});
+            //console.info(user);
+        });
     });
 
     app.route('/collection')

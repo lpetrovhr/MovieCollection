@@ -36,8 +36,51 @@
                 <a href="/signup" class="btn btn-info btn-sm"><span class="fa fa-user"></span> Signup</a>
             </div>
         </div>
-        <div class="container col-md-12">
-
+        <div class="container col-md-12 main-list">
+            <div class="col-md-4">
+                <div class="users-list">
+                    <h4> Click on the user to see his collection</h4>
+                    <% users.forEach(function(user){ %>
+                         <p><a href="" class="getMovies" id="<%= user._id %>"><%= user.local.email %></a></p>
+                       <% }) %>
+                </div>
+            </div>
+            <div class="col-md-8" id="userMovie">
+            </div>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("a.getMovies").click(function (event) {
+                    event.preventDefault();
+                    var id = $(this).attr('id');
+                    console.log(id);
+                    $.ajax({
+                        url: "/userData",
+                        data: {
+                            ajaxValue: id
+                        },
+                        type: "GET",
+                        success: function (data){
+                            $('.movies').remove();  
+                            $.each(data.movies, function(a, item){
+                                console.log(item.title);
+                                $('#userMovie').append('<div class="movies">' +
+                                 '<h3>' + item.title + '</h3>' +
+                                 '<p><b>Director: </b>' + item.director + '</p>' +
+                                 '<p><b>Year:</b>'+ item.year +'</p>' +
+                                 '<p><b>Duration: </b>'+ item.duration +'</p>' +
+                                 '<p><b>Storyline: </b>'+ item.storyline +'</p>' +
+                                 '<p><b>Genre: </b>'+ item.genre +'</p>' +
+                                 '</div>');
+                            });
+                        },
+                        error: function (err) {
+                            console.log(err);
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
