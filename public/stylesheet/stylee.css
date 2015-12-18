@@ -37,3 +37,8 @@
 .main-list{
     margin:10px;
 }
+
+.movies .bg-info{
+    margin-top: 50px;
+    text-align: center;
+}

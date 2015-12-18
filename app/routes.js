@@ -28,7 +28,14 @@ module.exports = function(app, passport){
                 mapThisShit.push(uMP);
             });
             console.log('Parsed JSON data: '+ mapThisShit);
-            res.send({movies: mapThisShit});
+            if(mapThisShit.length == 0){
+                console.log('Map is empty I will return message with ajax success');
+
+                res.send({emptyMsg: 'This user has no movies in his collection'});
+            }
+            else {
+                res.send({movies: mapThisShit});
+            }
             //console.info(user);
         });
     });

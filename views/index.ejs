@@ -62,7 +62,8 @@
                         },
                         type: "GET",
                         success: function (data){
-                            $('.movies').remove();  
+                            $('.movies').remove();
+                            if(data.movies){
                             $.each(data.movies, function(a, item){
                                 console.log(item.title);
                                 $('#userMovie').append('<div class="movies">' +
@@ -73,7 +74,13 @@
                                  '<p><b>Storyline: </b>'+ item.storyline +'</p>' +
                                  '<p><b>Genre: </b>'+ item.genre +'</p>' +
                                  '</div>');
-                            });
+                            });}
+                            else{
+                                console.log(data);
+                                $('#userMovie').append('<div class="movies col-md-6">'+
+                                '<p class="bg-info text-danger">' + data.emptyMsg + '</p>'
+                                );
+                            }
                         },
                         error: function (err) {
                             console.log(err);
