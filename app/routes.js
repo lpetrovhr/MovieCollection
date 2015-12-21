@@ -146,6 +146,22 @@ module.exports = function(app, passport){
             res.redirect('/profile');
         });
     });
+
+    app.route('/removeMovie/:id')
+        .get(function(req, res){
+            var user = req.user;
+            var index = user.movie.length;
+            console.log(index);
+            while(index--){
+                if(user.movie[index]._id == req.params.id) break;
+            }
+            user.movie.splice(index,1);
+            console.log(user.movie);
+            user.save(function(err){
+                if(err) throw err;
+                res.redirect('/collection');
+            });
+        });
 };
 
 function isLoggedIn(req, res, next){

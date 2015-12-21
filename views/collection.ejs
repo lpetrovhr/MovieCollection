@@ -28,7 +28,7 @@
                 </div>
             <%} else{%>
             <% user.movie.forEach(function(mov){ %>
-                <div class="movie">
+                <div class="col-md-8 movie">
                     <h3><%= mov.title %></h3>
                     <p>Director: <b><%= mov.director %></b></p>
                     <p>Duration: <b><%= mov.duration %></b></p>
@@ -36,6 +36,9 @@
                     <p>Genre: <b><%= mov.genre %></b></p>
                     <p>Storyline: <b><%= mov.storyline %></b></p>
                     <hr>
+                </div>
+                <div class="col-md-2">
+                    <a href="/removeMovie/<%= mov._id %>" id="<%= mov._id %>" title="Remove Movie"><span class="fa fa-trash"></span></a>
                 </div>
             <% })} %>
     </div>
