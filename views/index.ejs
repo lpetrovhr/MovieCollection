@@ -41,7 +41,12 @@
                 <div class="users-list">
                     <h4> Click on the user to see his collection</h4>
                     <% users.forEach(function(user){ %>
-                         <p><a href="" class="getMovies" id="<%= user._id %>"><%= user.local.email %></a></p>
+                        <% if(user.local.name){ %>
+                          <p><a href="" class="getMovies" id="<%= user._id %>"><%= user.local.name %></a></p>
+                        <% }else{ %>
+                           <p><a href="" class="getMovies" id="<%= user._id %>"><%= user.local.email %></a></p>
+                        <% } %>
+
                        <% }) %>
                 </div>
             </div>

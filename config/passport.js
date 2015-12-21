@@ -4,6 +4,7 @@
 
 var LocalStrategy = require('passport-local').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var xss = require('xss');
 
 var User = require('../app/models/user');
 
@@ -104,15 +105,15 @@ module.exports = function(passport) {
                  return done(null, false, req.flash('signupMessage','User already exists'));
              } else {
                  var newUser = new User();
-                 console.log(email);
-                 console.log(password);
-                 newUser.local.email = email;
+                 console.log(xss(email));
+                 console.log(xss(password));
+                 newUser.local.email = xss(email);
                  newUser.local.password = newUser.generateHash(password);
-
+                 newUser.local.name = xss(req.body.uName);
                  newUser.save(function(err){
                      if(err)
                         throw err;
-                     return done(null, newUser, req.flash('signupMessage', 'Uspješan signup'));
+                     return done(null, newUser);
                  });
              }
          })

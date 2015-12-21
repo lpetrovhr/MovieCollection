@@ -1,4 +1,5 @@
 var mongooes = require('mongoose');
+var xss = require('xss');
 var Movie = mongooes.model('Movie');
 var User = mongooes.model('User');
 
@@ -22,6 +23,7 @@ module.exports = function(app, passport){
         User.findOne({'_id' : userID}, function(err, user){
             var mapThisShit = [];
             var movie = user.movie
+            console.log(user.movie);
             movie.forEach(function(mov){
                 var uM = JSON.stringify(mov);
                 var uMP = JSON.parse(uM);
@@ -50,12 +52,12 @@ module.exports = function(app, passport){
         .post(function(req, res){
             var user = req.user;
             new Movie({
-                title: req.body.mTitle,
-                director: req.body.mDirector,
+                title: xss(req.body.mTitle),
+                director: xss(req.body.mDirector),
                 duration: req.body.mDuration,
-                storyline: req.body.mStory,
+                storyline: xss(req.body.mStory),
                 year: req.body.mYear,
-                genre: req.body.mGenre
+                genre: xss(req.body.mGenre)
             }).save(function(err, mov){
                 if(err) throw err;
 
@@ -126,7 +128,7 @@ module.exports = function(app, passport){
         failureRedirect : '/'
     }));
 
-    app.get('/unlink/local', function(req, res){
+    /*app.get('/unlink/local', function(req, res){
         var user = req.user;
         user.local.email = undefined;
         user.local.password = undefined;
@@ -134,7 +136,7 @@ module.exports = function(app, passport){
                 if(err) throw err;
             res.redirect('/profile');
         });
-    });
+    });*/
 
     app.get('/unlink/google', function(req, res){
         var user = req.user;
