@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be5950ad-ed41-4d10-81d4-b9c60d176a00" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/auth.js" afterPath="$PROJECT_DIR$/config/auth.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/passport.js" afterPath="$PROJECT_DIR$/config/passport.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheet/stylee.css" afterPath="$PROJECT_DIR$/public/stylesheet/stylee.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/collection.ejs" afterPath="$PROJECT_DIR$/views/collection.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/profile.ejs" afterPath="$PROJECT_DIR$/views/profile.ejs" />
     </list>
     <ignored path="MovieCollection.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -370,7 +364,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452284933195</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="few changes">
+      <created>1452291374913</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1452291374913</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -395,7 +395,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="52" width="1307" height="716" extended-state="4" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22741432" sideWeight="0.4973221" order="3" side_tool="false" content_ui="tabs" />
@@ -436,7 +436,8 @@
     <MESSAGE value="input checking for xss, collection changes, signup changes" />
     <MESSAGE value="remove movie from collection" />
     <MESSAGE value="Major app changes, few js tools integration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Major app changes, few js tools integration." />
+    <MESSAGE value="few changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="few changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
