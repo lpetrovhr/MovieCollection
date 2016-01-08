@@ -9,7 +9,16 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     session = require('express-session');
 
-mongoose.connect('mongodb://localhost/movieCollection'); //connect do db
+/*
+mongoose.connect('mongodb://localhost/movieCollection'); //connect do db local
+*/
+
+//MONGOLAB_URI= "mongodb://example:example@ds037005.mongolab.com:37005/moviecollection"
+
+mongoose.connect("mongodb://example:example@ds037005.mongolab.com:37005/moviecollection", function(err){
+    if(err) console.log(err);
+    else console.log('mongodb connected');
+});
 
 require('./config/passport')(passport);//pass passport to config/passport.js
 
