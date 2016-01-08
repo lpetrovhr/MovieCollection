@@ -1,16 +1,16 @@
-var mongoose = require('mongoose');
-var bcrypt = require('bcrypt-nodejs');
+var mongoose = require('mongoose'),
+    bcrypt = require('bcrypt-nodejs'),
 
-var movieSchema = mongoose.Schema({
+    movieSchema = mongoose.Schema({
     title : String,
     director: String,
     duration: Number,
     storyline: String,
     year: Number,
     genre: String
-});
+}),
 
-var userSchema = mongoose.Schema({
+    userSchema = mongoose.Schema({
 
     local  : {
         email : String,
@@ -27,11 +27,11 @@ var userSchema = mongoose.Schema({
     movie : [movieSchema]
 });
 
-userSchema.methods.generateHash = function (password) {
+userSchema.methods.generateHash = function(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 
-userSchema.methods.validPassword = function(password){
+userSchema.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.local.password);
 };
 

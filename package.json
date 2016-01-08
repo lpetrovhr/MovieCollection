@@ -11,11 +11,19 @@
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.0",
     "ejs": "^2.3.4",
+    "expect.js": "^0.3.1",
     "express": "^4.13.3",
     "express-session": "^1.12.1",
+    "gulp": "^3.9.0",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-jshint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.8.0",
     "kareem": "^1.0.1",
     "kerberos": "^0.0.17",
     "method-override": "^2.3.5",
+    "mocha": "^2.3.4",
     "mongoose": "^4.2.8",
     "morgan": "^1.6.1",
     "passport": "^0.3.2",
@@ -23,9 +31,17 @@
     "passport-google-oauth": "^0.2.0",
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.3",
-    "xss": "^0.2.9"
+    "should": "^8.0.2",
+    "superagent": "^1.6.1",
+    "supertest": "^1.1.0",
+    "xss": "^0.2.9",
+    "swagger-node-express": "~2.0",
+    "minimist": "*"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^2.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lpetrovhr/MovieCollection-node-.git"
