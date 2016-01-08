@@ -42,3 +42,14 @@
     margin-top: 50px;
     text-align: center;
 }
+
+.movie-title{
+    float: left;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.movie-options{
+    float: left;
+    margin-left: 20px;
+}

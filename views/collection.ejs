@@ -28,19 +28,21 @@
                 </div>
             <%} else{%>
             <% user.movie.forEach(function(mov){ %>
-                <div class="col-md-4 movie">
-                    <h3><%= mov.title %></h3>
+                <div class="col-md-3 movie">
+                    <div class="movie-title">
+                        <%= mov.title %>
+                    </div>
+                    <div class="movie-options">
+                        <a href="" class ="editMovie" id="<%= mov._id %>" title="Edit Movie" data-toggle="modal" data-target=".bs-modal-md"><span class="fa fa-pencil"></span></a>
+                        <a href="/removeMovie/<%= mov._id %>" id="<%= mov._id %>" title="Remove Movie"><span class="fa fa-trash"></span></a>
+                    </div>
+                    <div class="empty"></div>
+                    <hr>
                     <p>Director: <b><%= mov.director %></b></p>
                     <p>Duration: <b><%= mov.duration %></b></p>
                     <p>Year: <b><%= mov.year %></b></p>
                     <p>Genre: <b><%= mov.genre %></b></p>
                     <p>Storyline: <b><%= mov.storyline %></b></p>
-                    <hr>
-                </div>
-                <div class="col-md-2">
-                    <div class="empty"></div>
-                    <a href="" class ="editMovie" id="<%= mov._id %>" title="Edit Movie" data-toggle="modal" data-target=".bs-modal-md"><span class="fa fa-pencil"></span></a>
-                    <a href="/removeMovie/<%= mov._id %>" id="<%= mov._id %>" title="Remove Movie"><span class="fa fa-trash"></span></a>
                 </div>
             <% })} %>
     </div>
@@ -50,11 +52,8 @@
 </div>
 
 <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-md">
         <div class="modal-content add-mv-modal">
-            <h4><span class="fa fa-plus"></span> Add existing movie</h4><hr>
-            <span class="fa fa-search-plus"></span> <input type="text">
-            <div class="empty"></div>
             <h4><span class="fa fa-plus"></span> Add new movie</h4><hr>
             <form action="/addMovie" method="post">
                 <div class="form-group">
