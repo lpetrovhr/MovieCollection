@@ -12,4 +12,6 @@ Technologies I used in development:
 - Gulp(jshint, jscs, istanbul, mocha) 
 - Heroku(deployment)
 - Google Authentication
-- Github
+- 
+
+You can visit deployed application here: https://awesome-movie-collection.herokuapp.com/
