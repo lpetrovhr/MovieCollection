@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be5950ad-ed41-4d10-81d4-b9c60d176a00" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/collection.ejs" afterPath="$PROJECT_DIR$/views/collection.ejs" />
     </list>
     <ignored path="MovieCollection.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -223,7 +222,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="javascript.nodejs.core.library.configured.version" value="5.0.0" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -424,7 +423,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452330011834</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="view fix">
+      <created>1452331670910</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1452331670911</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -493,7 +498,8 @@
     <MESSAGE value="few changes" />
     <MESSAGE value="mongodb service connection added" />
     <MESSAGE value="bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fixes" />
+    <MESSAGE value="view fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="view fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
