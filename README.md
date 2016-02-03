@@ -14,3 +14,5 @@ Technologies I used in development:
 - Google Authentication
 
 You can visit deployed application here: https://awesome-movie-collection.herokuapp.com/
+
+Live long and prosper  \V/_
